@@ -1,0 +1,107 @@
+@media all and (max-width: 1024px)
+{
+    #content
+    {
+        flex-direction: column;
+    }
+
+    /*je change la disposition de certaine bordure sinon le rendu n'est pas correct*/
+    section:nth-child(1), section:nth-child(2)
+    {
+        border-bottom: 1px teal dashed;
+    }
+
+    /*Disparition du lisere*/
+    #lisere
+    {
+        display: none;
+    }
+
+    /* ".element" est une class qui cible le bloc contenant une phrase + le nom du cv et le bloc contenant la photo. 
+    Ducoup, pour eviter un mauvais rendu j'ai du ajouter une marge interieur droite)*/
+    .element:nth-child(1)
+    {
+        padding-right: 10px;
+    }
+}
+
+
+/*Debut du code CSS pour une version basique*/
+@font-face {
+    font-family: 'cac_champagneregular';
+    src: url('fonts/cac_champagne-webfont.eot');
+    src: url('fonts/cac_champagne-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/cac_champagne-webfont.woff2') format('woff2'),
+         url('fonts/cac_champagne-webfont.woff') format('woff'),
+         url('fonts/cac_champagne-webfont.ttf') format('truetype'),
+         url('fonts/cac_champagne-webfont.svg#cac_champagneregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#bloc_page
+{
+    display: flex;
+}
+
+#lisere
+{
+    min-width: 10px;
+    width: 30px;
+    background-color: teal;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+/*j'utilise le "flex: 1;" pour m'assurer que le bloc utilise toute la largeur*/
+#cadre
+{
+    background: url("images/coin_haut_gauche.png") no-repeat top left, url("images/coin_haut_droite.png") no-repeat top right, url("images/coin_bas_gauche.png") no-repeat bottom left, url("images/coin_bas_droite.png") no-repeat bottom right;
+    flex: 1;
+    padding: 40px;
+}
+
+header
+{
+    display: flex;
+}
+
+.element:nth-child(1)
+{
+    flex: 1;
+    text-align: center;
+}
+
+.photoprofil
+{
+    box-shadow: 6px 6px 6px black;
+}
+
+/*Pour que ca rende bien j'ai volontairement mis la border-left dans "section" sinon c'est pas ouf. */
+#content
+{
+    display: flex; 
+    border-top: 1px teal dashed;
+    border-bottom: 1px teal dashed;
+    border-right: 1px teal dashed;
+}
+
+section
+{
+    padding: 10px;
+    flex: 1;
+    border-left: 1px teal dashed;
+}
+
+h1
+{
+	font-family: cac_champagneregular, "Arial Black", Verdana, serif;
+    font-size: 3em;
+}
+
+h2
+{
+	color: teal;
+    text-decoration: underline;
+    text-align: center;
+}
